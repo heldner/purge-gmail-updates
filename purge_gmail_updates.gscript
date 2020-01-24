@@ -1,0 +1,22 @@
+function cleanUpUpdates() {
+  Logger.log("Start");
+
+  var threads = GmailApp.search('label:"Updates"');
+
+  Logger.log("Total found threads with label Updates %s", threads.length)
+  for (var i = 0; i < threads.length; i++) {
+    thr = threads[i]
+    Logger.log("Iterate %s", i)
+    thread_id = thr.getId();
+    if (thr.isInInbox()) {
+      Logger.log("Skip delete %s, because thread is in inbox", thread_id)
+    } else {
+      Logger.log("Move %s to trash", thread_id)
+      thr.moveToTrash();
+    }
+  }
+}
+
+function myFunction() {
+  cleanUpUpdates();
+}
