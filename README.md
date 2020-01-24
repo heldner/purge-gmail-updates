@@ -1,3 +1,3 @@
 # Purge gmail Updates
 
-This gscript prune emails in gmail box, that is not in inbox.
+This gscript prune emails, which labled "Updates" in gmail box, that is not in inbox.
